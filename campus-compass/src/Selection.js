@@ -23,7 +23,7 @@ const data = [
   {
     id: 4,
     university: "University of Sri Jayewardenepura",
-    logo: "https://upload.wikimedia.org/wikipedia/en/thumb/8/8e/University_of_Sri_Jayewardenepura_logo.png/120px-University_of_Sri_Jayewardenepura_logo.png",
+    logo: "https://www.sjp.ac.lk/wp-content/uploads/2020/10/usjp-logo-150x150.png",
     courses: ["Management", "Biological Science", "Accounting"],
   },
   {
