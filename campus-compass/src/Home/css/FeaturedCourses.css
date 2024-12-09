@@ -1,0 +1,99 @@
+/* Section styling */
+.featured-courses {
+  padding: 2rem 1rem;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.featured-courses h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+/* Slider container with buttons */
+.slider-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Scroll buttons */
+.scroll-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #004080;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 50%;
+  transition: background-color 0.3s;
+}
+
+.scroll-btn:hover {
+  background-color: #0066cc;
+}
+
+.left-btn {
+  left: 10px;
+}
+
+.right-btn {
+  right: 10px;
+}
+
+/* Slider container */
+.course-slider {
+  display: flex;
+  overflow: hidden;
+  gap: 1rem;
+  scroll-behavior: smooth;
+  padding: 1rem;
+  width: 100%;
+}
+
+/* Flashcard styling */
+.course-card {
+  flex: 0 0 auto;
+  width: 250px;
+  height: 200px;
+  background-color: #004080;
+  color: white;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.course-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.course-card h3 {
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+}
+
+.course-card p {
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* University logo */
+.university-logo {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-bottom: 0.5rem;
+  object-fit: cover;
+  background-color: white;
+}

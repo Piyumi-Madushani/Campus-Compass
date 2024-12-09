@@ -1,0 +1,92 @@
+/* Section styling */
+.impact-section {
+  padding: 4rem 1rem;
+  background-color: #f9f9f9;
+  display: flex;
+  justify-content: center;
+}
+
+.impact-container {
+  display: flex;
+  gap: 2rem;
+  max-width: 1200px;
+  width: 100%;
+}
+
+/* Left side: Description */
+.impact-description {
+  flex: 1;
+  text-align: left;
+}
+
+.impact-description h2 {
+  font-size: 2rem;
+  color: #002b47;
+  margin-bottom: 1rem;
+}
+
+.impact-description p {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Vertical Line */
+.vertical-line {
+  width: 2px;
+  background-color: #004080;
+  margin: 0 2rem;
+  height: auto;
+}
+
+/* Right side: Features */
+.impact-features {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.feature-icon {
+  width: 50px;
+  height: 50px;
+}
+
+.feature-text h3 {
+  font-size: 1.5rem;
+  color: #004080;
+  margin-bottom: 0.5rem;
+}
+
+.feature-text p {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .impact-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .vertical-line {
+    display: none;
+  }
+
+  .impact-description {
+    margin-bottom: 2rem;
+  }
+
+  .impact-features {
+    align-items: center;
+  }
+}
