@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './Home/js/Header'; 
@@ -8,9 +9,11 @@ import About from './AboutPage/About';
 import TermsAndConditions from './TermsAndConditions/TermsAndConditions';
 import Contact from './ContactUs/Contact';
 
+
 const App = () => {
   return (
     <Router>
+
       <div className="app-container">
         <Header />
         <main className="content">
@@ -24,6 +27,7 @@ const App = () => {
         </main>
         <Footer />
       </div>
+
     </Router>
   );
 };
