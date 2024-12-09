@@ -1,0 +1,101 @@
+/* Overall Header Styling */
+.header {
+  background-color: #002b47; /* Dark navy blue */
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #e0f4ff; /* Light blue text */
+  position: sticky; /* Keep header fixed during vertical scrolling */
+  top: 0;
+  z-index: 1000; /* Ensure it stays above other content */
+  border-bottom: 2px solid #4ac6ff; /* Subtle accent border */
+}
+
+/* Container for Layout */
+.container {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo Section */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo-image {
+  width: 50px; /* Adjust the size of the logo */
+  height: auto;
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #e0f4ff;
+}
+
+/* Navigation Links */
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  margin: 0;
+}
+
+.nav-links a {
+  color: #e0f4ff; /* Light blue */
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.3s ease-in-out;
+}
+
+.nav-links a:hover {
+  color: #4ac6ff; /* Brighter blue for hover */
+  text-decoration: underline;
+}
+
+/* Authentication Buttons */
+.auth-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.auth-buttons button {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.auth-buttons button:focus {
+  outline: 2px solid #e0f4ff; /* Light blue focus outline */
+  outline-offset: 2px;
+}
+
+.login-btn {
+  background-color: #004f73; /* Darker blue */
+  color: #e0f4ff; /* Light blue text */
+  transition: background-color 0.3s ease-in-out;
+}
+
+.login-btn:hover {
+  background-color: #006b99; /* Brighter blue for hover */
+}
+
+.signup-btn {
+  background-color: #007199; /* Complementary blue tone */
+  color: white;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.signup-btn:hover {
+  background-color: #005f80; /* Slightly darker blue for hover */
+}
