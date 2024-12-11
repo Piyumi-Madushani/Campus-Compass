@@ -5,11 +5,13 @@ import '../css/Header.css';
 import logo from '../assets/images/logo.png';
 
 function Header() {
+
   const location = useLocation();
 
   const getActiveClass = (path) => {
     return location.pathname === path ? 'active' : '';
   };
+
   return (
     <header className="header">
       <div className="container">
@@ -19,9 +21,10 @@ function Header() {
         </div>
         <nav>
           <ul className="nav-links">
+
           <li className={getActiveClass('/')}>
             <Link to="/">Home</Link></li>
-            <li className={getActiveClass('/about')}>
+            <li className={getActiveClass('/About')}>
             <Link to="/About">About</Link></li>
             <li className={getActiveClass('/Selection')}>
               <Link to="/Selection">Courses</Link></li>
@@ -31,6 +34,7 @@ function Header() {
               <Link to="/Contact">Contact Us</Link></li>
               <li className={getActiveClass('/TermsAndConditions')}>
               <Link to="/terms-and-conditions">Terms and Conditions</Link></li>
+
           </ul>
         </nav>
         <div className="auth-buttons">

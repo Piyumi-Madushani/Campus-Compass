@@ -64,6 +64,12 @@ function Footer() {
 
       
       
+      {/* Back to Top Button */}
+      {isVisible && (
+        <button className="back-to-top" onClick={scrollToTop}>
+          ↑
+        </button>
+      )}
     </footer>
   );
 }

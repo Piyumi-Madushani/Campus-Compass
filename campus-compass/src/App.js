@@ -1,5 +1,6 @@
 
 import React from 'react';
+
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import About from './AboutPage/About';
 import Contact from './ContactUs/Contact';
@@ -10,6 +11,7 @@ import Home from './Home/js/Home';
 import Selection from './Selection';
 import TermsAndConditions from './TermsAndConditions/TermsAndConditions';
 import FloatingButtons from './components/FloatingButtons';
+
 
 
 const App = () => {
