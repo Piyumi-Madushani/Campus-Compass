@@ -62,12 +62,8 @@ function Footer() {
         <p>© 2024 Campus Compass. All Rights Reserved.</p>
       </div>
 
-      {/* Back to Top Button */}
-      {isVisible && (
-        <button className="back-to-top" onClick={scrollToTop}>
-          ↑
-        </button>
-      )}
+      
+      
     </footer>
   );
 }

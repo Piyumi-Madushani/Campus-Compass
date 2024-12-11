@@ -55,6 +55,25 @@
   transition: color 0.3s ease-in-out;
 }
 
+.nav-links li {
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #e0f4ff; /* Light blue */
+}
+
+.nav-links li.active {
+  background-color: #007199; /* Highlight color */
+  color: white;
+}
+
+.nav-links li.active a {
+  color: white;
+}
+
 .nav-links a:hover {
   color: #4ac6ff; /* Brighter blue for hover */
   text-decoration: underline;

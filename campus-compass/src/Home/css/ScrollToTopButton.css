@@ -1,0 +1,41 @@
+/* src/components/ScrollToTopButton.css */
+.scroll-to-top {
+  position: fixed;
+  bottom: 80px; /* Position above the Chatbot button */
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background-color: #007199; /* Matching your color scheme */
+  color: #e0f4ff;
+  border: none;
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+  z-index: 1000;
+}
+
+.scroll-to-top:hover {
+  background-color: #0056a3;
+}
+
+.scroll-to-top::after {
+  content: attr(aria-label);
+  position: absolute;
+  bottom: 60px; /* Adjust based on button position */
+  right: 0;
+  background-color: #333;
+  color: #fff;
+  padding: 5px 8px;
+  border-radius: 4px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  white-space: nowrap;
+  font-size: 12px;
+}
+
+.scroll-to-top:hover::after {
+  opacity: 1;
+}

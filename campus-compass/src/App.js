@@ -1,13 +1,15 @@
 
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Header from './Home/js/Header'; 
-import Footer from './Home/js/Footer'; 
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
+import About from './AboutPage/About';
+import Contact from './ContactUs/Contact';
+import FAQ from './FAQPage/js/FAQ';
+import Footer from './Home/js/Footer';
+import Header from './Home/js/Header';
 import Home from './Home/js/Home';
 import Selection from './Selection';
-import About from './AboutPage/About';
 import TermsAndConditions from './TermsAndConditions/TermsAndConditions';
-import Contact from './ContactUs/Contact';
+import FloatingButtons from './components/FloatingButtons';
 
 
 const App = () => {
@@ -23,7 +25,9 @@ const App = () => {
             <Route path="/about" element={<About />} />
             <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
             <Route path="/Contact" element={<Contact />} />
+            <Route path = "/FAQ" element ={<FAQ/>}/>
           </Routes>
+          <FloatingButtons/>
         </main>
         <Footer />
       </div>

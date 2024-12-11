@@ -65,34 +65,3 @@
   color: #4ac6ff;
 }
 
-.footer-bottom {
-  text-align: center;
-  margin-top: 2rem;
-  font-size: 0.9rem;
-  color: #e0f4ff;
-  border-top: 1px solid #4ac6ff;
-  padding-top: 1rem;
-}
-
-/* Back to Top Button Styles */
-.back-to-top {
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  background-color: #bbc3c9;
-  color: #002b47;
-  border: none;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  font-size: 1.5rem;
-  cursor: pointer;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-  transition: background-color 0.3s, transform 0.3s;
-}
-
-.back-to-top:hover {
-  background-color: #002b47;
-  color: #e0f4ff;
-  transform: scale(1.1);
-}
