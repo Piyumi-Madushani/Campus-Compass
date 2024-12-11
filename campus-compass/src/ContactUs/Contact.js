@@ -1,4 +1,7 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFacebook, faTwitter, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+
 import './Contact.css';
 
 function Contact() {
@@ -29,9 +32,13 @@ function Contact() {
       <div className="contact-section">
         <h2>Social Media</h2>
         <ul className="social-links">
-          <li><a href="https://facebook.com/campuscompass" target="_blank" rel="noopener noreferrer">Facebook</a></li>
-          <li><a href="https://instagram.com/campuscompass.lk" target="_blank" rel="noopener noreferrer">Instagram</a></li>
-          <li><a href="https://linkedin.com/company/campuscompass" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+
+        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"> <FontAwesomeIcon icon={faFacebook} size="2x" /> </a>
+          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"> <FontAwesomeIcon icon={faTwitter} size="2x" /> </a>
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"> <FontAwesomeIcon icon={faInstagram} size="2x" /> </a>
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"> <FontAwesomeIcon icon={faLinkedin} size="2x" /> </a>          
+
+
         </ul>
       </div>
       

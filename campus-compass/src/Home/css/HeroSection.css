@@ -18,27 +18,33 @@
   width: 90%;
 }
 
-.hero-gif {
-  flex: 1;
+
+.hero-gif { 
+  flex: 2;
   display: flex;
   justify-content: left;
-  align-items: center;
+  align-items: left;
+
 }
 
 .hero-gif img {
   max-width: none; 
-  width: 35%; 
+
+  width: 50%; 
+
   height: auto; 
 }
 
 .hero-content {
   flex: 1.2;
-  text-align: right;
+  text-align: center;
+
   padding: 1rem;
 }
 
 .hero-content h1 {
-  font-size: 2rem;
+  font-size: 3rem;
+
   margin-bottom: 1rem;
 }
 

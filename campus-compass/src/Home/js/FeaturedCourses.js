@@ -1,6 +1,19 @@
 import React, { useRef } from 'react';
 import '../css/FeaturedCourses.css';
 
+import UoCLogo from '../assets/images/UniversityLogos/UniversityofColomboLogo.png';
+import UoPLogo from '../assets/images/UniversityLogos/UniversityOfPeradeniyaLogo.png';
+import UoMLogo from '../assets/images/UniversityLogos/UniversityOfMoratuwaLogo.png';
+import UoKLogo from '../assets/images/UniversityLogos/UniversityOfKelaniyaLogo.png';
+import UoRLogo from '../assets/images/UniversityLogos/UniversityOfRuhunaLogo.png';
+import UoJLogo from '../assets/images/UniversityLogos/UniversityOfJaffnaLogo.png';
+import UoSJLogo from '../assets/images/UniversityLogos/UniversityOfSriJayawardanapuraLogo.png';
+import UoSLogo from '../assets/images/UniversityLogos/UniversityOfSabaragamuwaLogo.png';
+import UoWLogo from '../assets/images/UniversityLogos/WayambaUniversityLogo.png';
+import UoELogo from '../assets/images/UniversityLogos/EasternUniversityLogo.png';
+//import UWULogo from '../assets/images/UniversityLogos/UvaWellassaUniversityLogo.jpg';
+
+
 function FeaturedCourses() {
   const sliderRef = useRef(null);
 
@@ -17,61 +30,79 @@ function FeaturedCourses() {
     {
       name: 'University of Colombo',
       course: 'Computer Science',
-      logo: '/assets/images/uoc-logo.png',
+
+      logo: UoCLogo,
       link: 'https://www.cmb.ac.lk/',
+    },
+    {
+      name: 'University of Sri Jayewardenepura',
+      course: 'Finance & Accounting',
+      logo: UoSJLogo,
+      link: 'https://www.sjp.ac.lk/',
     },
     {
       name: 'University of Peradeniya',
       course: 'Medicine',
-      logo: '/assets/images/uop-logo.png',
+      logo: UoPLogo,
+
       link: 'https://www.pdn.ac.lk/',
     },
     {
       name: 'University of Moratuwa',
       course: 'Engineering',
-      logo: '/assets/images/uom-logo.png',
+
+      logo: UoMLogo,
+
       link: 'https://uom.lk/',
     },
     {
       name: 'University of Kelaniya',
       course: 'Management',
-      logo: '/assets/images/uok-logo.png',
+
+      logo: UoKLogo,
+
       link: 'https://www.kln.ac.lk/',
     },
     {
       name: 'University of Ruhuna',
       course: 'Agriculture',
-      logo: '/assets/images/uor-logo.png',
+
+      logo: UoRLogo,
+
       link: 'https://www.ruh.ac.lk/',
     },
     {
       name: 'University of Jaffna',
       course: 'Health Sciences',
-      logo: '/assets/images/uoj-logo.png',
+
+      logo: UoJLogo,
       link: 'https://www.jfn.ac.lk/',
-    },
-    {
-      name: 'University of Sri Jayewardenepura',
-      course: 'Finance & Accounting',
-      logo: '/assets/images/usjp-logo.png',
-      link: 'https://www.sjp.ac.lk/',
     },
     {
       name: 'University of Sabaragamuwa',
       course: 'Tourism Management',
-      logo: '/assets/images/usu-logo.png',
-      link: 'https://www.sab.ac.lk/',
+      logo: UoSLogo,
+      link: 'https://www.sabcampus-co.ac.lk/',
     },
+    /*{
+      name: 'Uva Wellassa University of Sri Lanka',
+      course: 'Entrepreneurship and Management',
+      logo: UWULogo,
+      link: 'https://www.uwu.ac.lk/',
+    },*/
     {
       name: 'University of Wayamba',
       course: 'Applied Sciences',
-      logo: '/assets/images/uow-logo.png',
+      logo: UoWLogo,
+
       link: 'https://www.wyb.ac.lk/',
     },
     {
       name: 'Eastern University, Sri Lanka',
       course: 'Social Sciences',
-      logo: '/assets/images/eusl-logo.png',
+
+      logo: UoELogo,
+
       link: 'https://www.esn.ac.lk/',
     },
   ];
