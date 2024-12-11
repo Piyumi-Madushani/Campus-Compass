@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import '../css/FeaturedCourses.css';
+
 import UoCLogo from '../assets/images/UniversityLogos/UniversityofColomboLogo.png';
 import UoPLogo from '../assets/images/UniversityLogos/UniversityOfPeradeniyaLogo.png';
 import UoMLogo from '../assets/images/UniversityLogos/UniversityOfMoratuwaLogo.png';
@@ -11,6 +12,7 @@ import UoSLogo from '../assets/images/UniversityLogos/UniversityOfSabaragamuwaLo
 import UoWLogo from '../assets/images/UniversityLogos/WayambaUniversityLogo.png';
 import UoELogo from '../assets/images/UniversityLogos/EasternUniversityLogo.png';
 //import UWULogo from '../assets/images/UniversityLogos/UvaWellassaUniversityLogo.jpg';
+
 
 function FeaturedCourses() {
   const sliderRef = useRef(null);
@@ -28,6 +30,7 @@ function FeaturedCourses() {
     {
       name: 'University of Colombo',
       course: 'Computer Science',
+
       logo: UoCLogo,
       link: 'https://www.cmb.ac.lk/',
     },
@@ -41,29 +44,37 @@ function FeaturedCourses() {
       name: 'University of Peradeniya',
       course: 'Medicine',
       logo: UoPLogo,
+
       link: 'https://www.pdn.ac.lk/',
     },
     {
       name: 'University of Moratuwa',
       course: 'Engineering',
+
       logo: UoMLogo,
+
       link: 'https://uom.lk/',
     },
     {
       name: 'University of Kelaniya',
       course: 'Management',
+
       logo: UoKLogo,
+
       link: 'https://www.kln.ac.lk/',
     },
     {
       name: 'University of Ruhuna',
       course: 'Agriculture',
+
       logo: UoRLogo,
+
       link: 'https://www.ruh.ac.lk/',
     },
     {
       name: 'University of Jaffna',
       course: 'Health Sciences',
+
       logo: UoJLogo,
       link: 'https://www.jfn.ac.lk/',
     },
@@ -83,12 +94,15 @@ function FeaturedCourses() {
       name: 'University of Wayamba',
       course: 'Applied Sciences',
       logo: UoWLogo,
+
       link: 'https://www.wyb.ac.lk/',
     },
     {
       name: 'Eastern University, Sri Lanka',
       course: 'Social Sciences',
+
       logo: UoELogo,
+
       link: 'https://www.esn.ac.lk/',
     },
   ];

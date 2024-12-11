@@ -29,6 +29,7 @@
 }
 
 .logo-image {
+
   width: 60px; /* Adjust the size of the logo */
   height: auto;
 }
@@ -88,11 +89,14 @@
 
 .login-btn:hover {
   background-color: #005f80; /* Brighter blue for hover */
+
 }
 
 .signup-btn {
   background-color: #007199; /* Complementary blue tone */
+
   color: #e0f4ff;
+
   transition: background-color 0.3s ease-in-out;
 }
 

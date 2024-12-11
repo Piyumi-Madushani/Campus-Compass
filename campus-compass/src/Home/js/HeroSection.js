@@ -1,6 +1,8 @@
 import React from 'react';
 import '../css/HeroSection.css';
+
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
+
 
 
 function HeroSection() {
@@ -14,6 +16,7 @@ function HeroSection() {
       loop
       autoplay
     />
+
         </div>
         <div className="hero-content">
           <h1>Find your dream university today</h1>
