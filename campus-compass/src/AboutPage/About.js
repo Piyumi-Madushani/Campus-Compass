@@ -4,10 +4,10 @@ import './About.css';
 function About() {
   return (
     <div className="about-page">
-      <section className="about-hero">
-        <h1>About Us</h1>
-        <p>Your ultimate guide to exploring higher education opportunities in Sri Lanka.</p>
-      </section>
+      <h1>About Us</h1>
+      <p>
+        Welcome to <strong>Campus Compass</strong>, your ultimate guide to exploring higher education opportunities in Sri Lanka.
+      </p>
 
       <section className="about-content">
         <h2>Who We Are</h2>
