@@ -1,75 +1,78 @@
-/* Overall Page Styling */
+/* General Page Styling */
 .about-page {
-    font-family: 'Arial', sans-serif;
-    color: #002b47; /* Dark navy blue */
-    line-height: 1.6;
-    padding: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    text-align: center;
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  font-family: Arial, sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Title Styling */
+.about-page h1 {
+  font-size: 2rem;
+  color: #002b47;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* Paragraph Styling */
+.about-page p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+/* Section Headings */
+.about-content h2 {
+  font-size: 1.5rem;
+  color: #004f73;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Lists */
+.about-content ul {
+  margin: 1rem 0;
+  padding-left: 20px;
+}
+
+.about-content ul li {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+/* Strong Text */
+.about-content strong {
+  color: #4ac6ff; /* Accent blue for emphasis */
+}
+
+/* Links */
+.about-page a {
+  color: #4ac6ff;
+  text-decoration: none;
+}
+
+.about-page a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-page {
+    padding: 1.5rem;
   }
-  
-  /* Hero Section */
-  .about-hero {
-    background-color: lightblue; /* Vibrant blue */
-    color: Black;
-    padding: 3rem 2rem;
-    margin-bottom: 2rem;
-    border-radius: 10px;
-  }
-  
-  .about-hero h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-  }
-  
-  .about-hero p {
-    font-size: 1.2rem;
-    max-width: 800px;
-    margin: 0 auto;
-  }
-  
-  /* Content Section */
-  .about-content {
-    text-align: left;
-  }
-  
-  .about-content h2 {
+
+  .about-page h1 {
     font-size: 1.8rem;
-    margin-bottom: 1rem;
-    color: #004f73; /* Darker blue */
   }
-  
-  .about-content p,
-  .about-content ul {
-    margin-bottom: 1.5rem;
+
+  .about-content h2 {
+    font-size: 1.3rem;
   }
-  
-  .about-content ul {
-    list-style: disc inside;
-    padding-left: 0;
-  }
-  
-  .about-content ul li {
-    margin-bottom: 0.5rem;
-  }
-  
-  .about-content strong {
-    color: #007199; /* Complementary blue tone */
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .about-hero h1 {
-      font-size: 2rem;
-    }
-  
-    .about-hero p {
-      font-size: 1rem;
-    }
-  
-    .about-content h2 {
-      font-size: 1.5rem;
-    }
-  }
-  
+}
+

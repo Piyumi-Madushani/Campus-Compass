@@ -29,7 +29,7 @@
 }
 
 .logo-image {
-  width: 50px; /* Adjust the size of the logo */
+  width: 60px; /* Adjust the size of the logo */
   height: auto;
 }
 
@@ -100,18 +100,18 @@
 }
 
 .login-btn {
-  background-color: #004f73; /* Darker blue */
+  background-color: #007199; /* Darker blue */
   color: #e0f4ff; /* Light blue text */
   transition: background-color 0.3s ease-in-out;
 }
 
 .login-btn:hover {
-  background-color: #006b99; /* Brighter blue for hover */
+  background-color: #005f80; /* Brighter blue for hover */
 }
 
 .signup-btn {
   background-color: #007199; /* Complementary blue tone */
-  color: white;
+  color: #e0f4ff;
   transition: background-color 0.3s ease-in-out;
 }
 

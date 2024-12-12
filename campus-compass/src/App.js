@@ -20,10 +20,10 @@ const App = () => {
 
       <div className="app-container">
         <Header />
-        <main className="content">
+        <main>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/Selection" element={<Selection />} />
+            <Route path="/selection" element={<Selection />} />
             <Route path="/about" element={<About />} />
             <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
             <Route path="/Contact" element={<Contact />} />
