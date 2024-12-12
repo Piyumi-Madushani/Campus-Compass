@@ -1,6 +1,8 @@
 import React from 'react';
 import '../css/HeroSection.css';
+
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
+
 
 
 function HeroSection() {
