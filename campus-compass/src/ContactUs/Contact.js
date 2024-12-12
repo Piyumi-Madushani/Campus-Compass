@@ -31,10 +31,12 @@ function Contact() {
       <div className="contact-section">
         <h2>Social Media</h2>
         <ul className="social-links">
+
         <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"> <FontAwesomeIcon icon={faFacebook} size="2x" /> </a>
           <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"> <FontAwesomeIcon icon={faTwitter} size="2x" /> </a>
           <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"> <FontAwesomeIcon icon={faInstagram} size="2x" /> </a>
           <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"> <FontAwesomeIcon icon={faLinkedin} size="2x" /> </a>          
+
 
         </ul>
       </div>

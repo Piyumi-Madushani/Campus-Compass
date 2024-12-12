@@ -14,6 +14,7 @@ function HeroSection() {
       loop
       autoplay
     />
+
         </div>
         <div className="hero-content">
           <h1>Find your dream university today</h1>

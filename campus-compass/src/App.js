@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
@@ -13,11 +12,9 @@ import TermsAndConditions from './TermsAndConditions/TermsAndConditions';
 import FloatingButtons from './components/FloatingButtons';
 
 
-
 const App = () => {
   return (
     <Router>
-
       <div className="app-container">
         <Header />
         <main>
