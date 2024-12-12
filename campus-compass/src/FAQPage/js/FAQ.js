@@ -1,6 +1,7 @@
 import React from 'react';
-import './FAQ.css'; // Link to the CSS file
 import FAQChatbot from './FAQChatbot';
+import  '../css/FAQ.css'; // Link to the CSS file
+
 
 function FAQ() {
   const faqs = [
@@ -30,11 +31,13 @@ function FAQ() {
           <div className="faq-item" key={index}>
             <h3 className="faq-question">{faq.question}</h3>
             <p className="faq-answer">{faq.answer}</p>
-            <FAQ />
-            <FAQChatbot />
+            
           </div>
         ))}
       </div>
+      <div className="faq-chatbot-button">
+    <FAQChatbot />
+</div>
     </div>
   );
 }

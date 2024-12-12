@@ -1,0 +1,32 @@
+/* Example: Smooth hover transitions */
+.scroll-to-top,
+.chatbot-button {
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.scroll-to-top:hover,
+.chatbot-button:hover {
+  transform: scale(1.05);
+}
+/* Add to ChatbotButton.css */
+.chatbot-button::after,
+.scroll-to-top::after {
+  content: attr(aria-label);
+  position: absolute;
+  bottom: 60px; /* Adjust based on button position */
+  right: 0;
+  background-color: #333;
+  color: #fff;
+  padding: 5px 8px;
+  border-radius: 4px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  white-space: nowrap;
+  font-size: 12px;
+}
+
+.chatbot-button:hover::after,
+.scroll-to-top:hover::after {
+  opacity: 1;
+}

@@ -29,7 +29,6 @@
 }
 
 .logo-image {
-
   width: 60px; /* Adjust the size of the logo */
   height: auto;
 }
@@ -54,6 +53,25 @@
   font-size: 1rem;
   font-weight: 500;
   transition: color 0.3s ease-in-out;
+}
+
+.nav-links li {
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #e0f4ff; /* Light blue */
+}
+
+.nav-links li.active {
+  background-color: #007199; /* Highlight color */
+  color: white;
+}
+
+.nav-links li.active a {
+  color: white;
 }
 
 .nav-links a:hover {
@@ -94,8 +112,6 @@
 
 .signup-btn {
   background-color: #007199; /* Complementary blue tone */
-
-  color: #e0f4ff;
 
   transition: background-color 0.3s ease-in-out;
 }
