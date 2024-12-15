@@ -48,6 +48,11 @@
 
 /* Slider container */
 .course-slider {
+<<<<<<< Updated upstream
+=======
+ 
+  border-radius: 10px;
+>>>>>>> Stashed changes
   display: flex;
   overflow: hidden;
   gap: 1rem;
