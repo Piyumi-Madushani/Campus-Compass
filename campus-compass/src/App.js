@@ -10,6 +10,7 @@ import Home from './Home/js/Home';
 import Selection from './Selection';
 import TermsAndConditions from './TermsAndConditions/TermsAndConditions';
 import FloatingButtons from './components/FloatingButtons';
+import AnimatedCharacter from './Home/js/AnimatedCharacter';
 
 
 
