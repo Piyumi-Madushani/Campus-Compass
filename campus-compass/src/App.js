@@ -12,6 +12,7 @@ import TermsAndConditions from './TermsAndConditions/TermsAndConditions';
 import FloatingButtons from './components/FloatingButtons';
 
 
+
 const App = () => {
   return (
     <Router>
