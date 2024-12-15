@@ -5,6 +5,7 @@ import degreeIcon from '../assets/icons/degree.JPG';
 import resourcesIcon from '../assets/icons/resources.JPG'; 
 import timeIcon from '../assets/icons/time.JPG'; 
 
+
 function ImpactSection() {
   const features = [
     {
@@ -44,7 +45,8 @@ function ImpactSection() {
           </p>
         </div>
         {/* Vertical Line */}
-        <div className="vertical-line"></div>
+        <div className="vertical-line">
+        </div>
         {/* Right side: Features */}
         <div className="impact-features">
           {features.map((feature, index) => (

@@ -31,8 +31,6 @@
   font-size: 1.5rem;
   cursor: pointer;
   z-index: 10;
-  /*width: 35px;
-  height: 35px;*/
   border-radius: 50%;
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
@@ -52,7 +50,8 @@
 
 /* Slider container */
 .course-slider {
-  background: linear-gradient(to right, #e0f7fa, #f1f8ff);
+  border-radius: 10px;
+ /* background: linear-gradient(to right, #e0f7fa, #f1f8ff);*/
   border-radius: 10px;
   display: flex;
   overflow: hidden;
