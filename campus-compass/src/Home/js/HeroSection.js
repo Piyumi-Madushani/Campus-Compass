@@ -1,6 +1,5 @@
 import React from 'react';
 import '../css/HeroSection.css';
-import AnimatedCharacter from '../js/AnimatedCharacter';
 
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
