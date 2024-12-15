@@ -50,15 +50,8 @@
 
 /* Slider container */
 .course-slider {
-<<<<<<< Updated upstream
-  border-radius: 10px;
- /* background: linear-gradient(to right, #e0f7fa, #f1f8ff);*/
-  border-radius: 10px;
-=======
 
   border-radius: 10px;
-
->>>>>>> Stashed changes
   display: flex;
   overflow: hidden;
   gap: 1rem;

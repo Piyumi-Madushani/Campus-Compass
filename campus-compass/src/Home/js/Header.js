@@ -42,7 +42,7 @@ function Header() {
               <Link to="/FAQ">FAQ</Link></li>
               <li className={getActiveClass('/Contact')}>
               <Link to="/Contact">Contact Us</Link></li>
-              <li className={getActiveClass('/TermsAndConditions')}>
+              <li className={getActiveClass('/terms-and-conditions')}>
               <Link to="/terms-and-conditions">Terms and Conditions</Link></li>
 
           </ul>
