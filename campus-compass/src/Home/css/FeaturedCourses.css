@@ -8,7 +8,8 @@
 .featured-courses h2 {
   font-size: 2rem;
   margin-bottom: 1rem;
-  color: #333;
+  color:rgb(6, 52, 84);
+
 }
 
 /* Slider container with buttons */
@@ -23,19 +24,22 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: #004080;
+  background-color:#0288d1;
   color: white;
   border: none;
   padding: 0.5rem 1rem;
   font-size: 1.5rem;
   cursor: pointer;
   z-index: 10;
+  /*width: 35px;
+  height: 35px;*/
   border-radius: 50%;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .scroll-btn:hover {
-  background-color: #0066cc;
+  background-color: #01579b;
+  transform: scale(1.1);
 }
 
 .left-btn {
@@ -44,10 +48,12 @@
 
 .right-btn {
   right: 10px;
-}
+} 
 
 /* Slider container */
 .course-slider {
+  background: linear-gradient(to right, #e0f7fa, #f1f8ff);
+  border-radius: 10px;
   display: flex;
   overflow: hidden;
   gap: 1rem;
@@ -59,33 +65,36 @@
 /* Flashcard styling */
 .course-card {
   flex: 0 0 auto;
-  width: 250px;
-  height: 200px;
-  background-color: #004080;
-  color: white;
-  border-radius: 10px;
+  width: 200px; 
+  height: 250px;
+  background: linear-gradient(to bottom, #e3f2fd, #f1f8ff);
+  color: #0d47a1;
+  border-radius: 12px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   cursor: pointer;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;;
 }
 
 .course-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-10px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  background-color:rgb(240, 243, 246);
 }
 
 .course-card h3 {
-  font-size: 1.2rem;
-  margin: 0.5rem 0;
+  font-weight: 700;
+   color: #0d47a1;
+   margin-bottom: 10px;
 }
 
 .course-card p {
-  font-size: 1rem;
-  margin: 0;
+  color: #607d8b;
+   font-size: 14px;
 }
 
 /* University logo */
@@ -96,4 +105,5 @@
   margin-bottom: 0.5rem;
   object-fit: cover;
   background-color: white;
+
 }
