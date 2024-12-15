@@ -1,6 +1,5 @@
 import React from 'react';
 import '../css/HeroSection.css';
-
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
 
@@ -10,7 +9,12 @@ function HeroSection() {
     <section className="hero-section">
       <div className="hero-container">
         <div className="hero-gif">
-        <AnimatedCharacter />
+
+        <DotLottieReact
+      src="https://lottie.host/d0451c87-5c50-40c3-9b26-e6f6aba62401/C5nbmTja8j.lottie"
+      loop
+      autoplay
+    />
 
         </div>
         <div className="hero-content">

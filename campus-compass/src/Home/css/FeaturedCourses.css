@@ -50,8 +50,7 @@
 
 /* Slider container */
 .course-slider {
-  border-radius: 10px;
- /* background: linear-gradient(to right, #e0f7fa, #f1f8ff);*/
+
   border-radius: 10px;
   display: flex;
   overflow: hidden;

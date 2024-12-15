@@ -14,6 +14,7 @@ import AnimatedCharacter from './Home/js/AnimatedCharacter';
 
 
 
+
 const App = () => {
   return (
     <Router>
