@@ -1,59 +1,65 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f5faff; /* Light blue background */
-    margin: 0;
-    padding: 0;
-  }
-  
-  .faq-container {
-    max-width: 1200px;
-    margin: 2rem auto;
-    padding: 2rem;
-    background-color: #ffffff; /* White background */
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  .faq-title {
-    text-align: center;
-    color: #002b47; /* Dark navy blue */
-    margin-bottom: 2rem;
-  }
-  
-  .faq-list {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-  
-  .faq-item {
-    padding: 1rem;
-    border: 1px solid #dceefc; /* Light blue border */
-    border-radius: 8px;
-    background-color: #f9fcff; /* Slightly off-white */
-  }
-  
-  .faq-item:hover {
-    background-color: #eaf7ff; /* Slight hover effect */
-  }
-  
-  .faq-question {
-    color: #004f73; /* Darker blue */
-    margin-bottom: 0.5rem;
-  }
-  
-  .faq-answer {
-    color: #333; /* Neutral text color */
-    line-height: 1.6;
-  }
-  
-  a {
-    color: #007199; /* Blue link */
-    text-decoration: none;
-  }
-  
-  a:hover {
-    text-decoration: underline;
-  }
-  
-  
+.faq-page {
+  display: flex;
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  height: 80vh; /* Ensure the parent container has a height */
+}
+
+/* Sidebar Styling */
+.faq-sidebar {
+  width: 20%;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-right: 1px solid #ccc;
+  height: 100%; /* Full height */
+  overflow-y: auto; /* Enable vertical scrolling */
+  box-sizing: border-box;
+}
+
+.faq-sidebar h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.faq-category {
+  margin: 10px 0;
+  cursor: pointer;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 8px 0;
+  color: #0073bb;
+}
+
+.faq-category.active {
+  font-weight: bold;
+  color: #ff9900;
+}
+
+.faq-category:hover {
+  color: #0073bb;
+}
+
+/* Content Styling */
+.faq-content {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto; /* Enable vertical scrolling if needed */
+}
+
+.faq-item {
+  margin-bottom: 20px;
+}
+
+.faq-question {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0 0 10px;
+  color: #333;
+}
+
+.faq-answer {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.5;
+}

@@ -1,45 +1,90 @@
-import React from 'react';
-import FAQChatbot from './FAQChatbot';
-import  '../css/FAQ.css'; // Link to the CSS file
+import React, { useState, useRef, useEffect } from "react";
+import FAQChatbot from "./FAQChatbot";
+import Apply from "./Apply";
+import "../css/FAQ.css"; // Link to the CSS file
+import Courses_degree from "./Courses_degree";
+import Admissions_Applications from "./Admissions_Applications";
+import Finance from "./Finance";
+import Facilities from "./Facilities";
+import International from "./International";
+import Miscellaneouss from "./Miscellaneouss";
 
-
-function FAQ() {
-  const faqs = [
-    {
-      question: "What is Campus Compass?",
-      answer: "Campus Compass is an online platform designed to help students select suitable university course modules."
-    },
-    {
-      question: "How can I access the platform?",
-      answer: "You can access Campus Compass online. Explore features like module recommendations by signing up."
-    },
-    {
-      question: "Can I get personalized course recommendations?",
-      answer: "Yes! Create an account to receive module suggestions based on your interests and qualifications."
-    },
-    {
-      question: "How do I contact support?",
-      answer: "Visit the Contact page for support or to provide feedback."
-    }
+const FAQPage = () => {
+  // Categories for sidebar
+  const categories = [
+    "General Information",
+    "Admissions & Applications",
+    "Courses & Programs",
+    "Financial Aid",
+    "International Opportunities",
+    "Facilities",
+    "Miscellaneous",
   ];
 
+  // FAQs data
+  const faqs = [
+    {
+    category:"General Information",
+    answer: <Apply />,
+  },
+  {category: "Admissions & Applications",
+    answer:<Admissions_Applications />, 
+  },
+  {category:"Courses & Programs",
+    answer: <Courses_degree />, 
+  },
+  {category:"Financial Aid",
+    answer: <Finance />, 
+  },
+  {category:"International Opportunities",
+    answer: <International />,
+  },
+  {category:"Facilities",
+    answer: <Facilities />,
+  },
+  {category:"Miscellaneous",
+    answer: <Miscellaneouss />,
+  },
+  
+];
+
+  const [selectedCategory, setSelectedCategory] = useState("General Information");
+ // const [sidebarVisible, setSidebarVisible] = useState(false);
+ // const sideRef = useRef(null);
+
+
   return (
-    <div className="faq-container">
-      <h2 className="faq-title">Frequently Asked Questions</h2>
-      <div className="faq-list">
-        {faqs.map((faq, index) => (
-          <div className="faq-item" key={index}>
-            <h3 className="faq-question">{faq.question}</h3>
+    <div className="faq-page">
+    <div className="faq-sidebar">
+      <h3>PAGE CONTENT</h3>
+      {categories.map((cat) => (
+        <p
+          key={cat}
+          className={`faq-category ${cat === selectedCategory ? "active" : ""}`}
+          onClick={() => setSelectedCategory(cat)}
+        >
+          {cat}
+        </p>
+      ))}
+    </div>
+
+    <div className="faq-content">
+      {faqs
+        .filter((faq) => faq.category === selectedCategory)
+        .map((faq, index) => (
+          <div key={index} className="faq-item">
+    
             <p className="faq-answer">{faq.answer}</p>
-            
           </div>
         ))}
-      </div>
-      <div className="faq-chatbot-button">
-    <FAQChatbot />
-</div>
-    </div>
-  );
-}
 
-export default FAQ;
+      {/* Chatbot Button */}
+      <div className="faq-chatbot-button">
+        <FAQChatbot />
+      </div>
+     </div>
+     </div>
+  );
+};
+
+export default FAQPage;
