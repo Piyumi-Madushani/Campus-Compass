@@ -2,6 +2,8 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import '../css/Header.css';
 import logo from '../assets/images/logo.png';
+import LoginSignup from '../Login_Signup';
+import LoginModal from '../../components/LoginModal';
 
 function Header() {
   const [isNavVisible, setIsNavVisible] = useState(false);
@@ -74,13 +76,18 @@ function Header() {
         </nav>
 
         {/* Authentication Buttons */}
-        <div className="auth-buttons">
-          <button className="login-btn">Login</button>
-          <button className="signup-btn">Sign Up</button>
-        </div>
+  <div className="auth-buttons">
+  {/* Link components for Login and Sign Up */}
+  <Link to="/LoginSignup" className="login-btn">
+    Login
+  </Link>
+  <Link to="/LoginSignup" className="signup-btn">
+    Sign Up
+  </Link>
+</div>
       </div>
     </header>
   );
 }
-
+  
 export default Header;
