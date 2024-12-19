@@ -21,69 +21,106 @@ const FAQPage = () => {
     "Miscellaneous",
   ];
 
+  const [sidebarVisible, setSidebarVisible] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false); // Track scroll position
+  const [selectedCategory, setSelectedCategory] = useState("General Information");
+
+  // Detect screen size and set initial sidebar visibility
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 769) {
+        setSidebarVisible(true); // Show sidebar on large screens
+      } else {
+        setSidebarVisible(false); // Hide sidebar on small screens
+      }
+    };
+
+    handleResize(); // Initial check
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  // Detect scroll position and set button background to transparent if scrolled
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 25) {
+        setIsScrolled(true); // If scrolled down, make button transparent
+      } else {
+        setIsScrolled(false); // If at the top, revert the button background
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   // FAQs data
   const faqs = [
-    {
-    category:"General Information",
-    answer: <Apply />,
-  },
-  {category: "Admissions & Applications",
-    answer:<Admissions_Applications />, 
-  },
-  {category:"Courses & Programs",
-    answer: <Courses_degree />, 
-  },
-  {category:"Financial Aid",
-    answer: <Finance />, 
-  },
-  {category:"International Opportunities",
-    answer: <International />,
-  },
-  {category:"Facilities",
-    answer: <Facilities />,
-  },
-  {category:"Miscellaneous",
-    answer: <Miscellaneouss />,
-  },
-  
-];
+    { category: "General Information", answer: <Apply /> },
+    { category: "Admissions & Applications", answer: <Admissions_Applications /> },
+    { category: "Courses & Programs", answer: <Courses_degree /> },
+    { category: "Financial Aid", answer: <Finance /> },
+    { category: "International Opportunities", answer: <International /> },
+    { category: "Facilities", answer: <Facilities /> },
+    { category: "Miscellaneous", answer: <Miscellaneouss /> },
+  ];
 
-  const [selectedCategory, setSelectedCategory] = useState("General Information");
- // const [sidebarVisible, setSidebarVisible] = useState(false);
- // const sideRef = useRef(null);
-
+  // Function to toggle the sidebar
+  const toggleSidebar = () => {
+    setSidebarVisible(!sidebarVisible);
+  };
 
   return (
     <div className="faq-page">
-    <div className="faq-sidebar">
-      <h3>PAGE CONTENT</h3>
-      {categories.map((cat) => (
-        <p
-          key={cat}
-          className={`faq-category ${cat === selectedCategory ? "active" : ""}`}
-          onClick={() => setSelectedCategory(cat)}
-        >
-          {cat}
-        </p>
-      ))}
-    </div>
-
-    <div className="faq-content">
-      {faqs
-        .filter((faq) => faq.category === selectedCategory)
-        .map((faq, index) => (
-          <div key={index} className="faq-item">
-    
-            <p className="faq-answer">{faq.answer}</p>
-          </div>
+      {/* Sidebar */}
+      <div className={`faq-sidebar ${sidebarVisible ? "visible" : "hidden"}`}>
+        <h3>PAGE CONTENT</h3>
+        {categories.map((cat) => (
+          <p
+            key={cat}
+            className={`faq-category ${cat === selectedCategory ? "active" : ""}`}
+            onClick={() => {
+              setSelectedCategory(cat);
+              setSidebarVisible(false); // Auto-close sidebar on category selection
+            }}
+          >
+            {cat}
+          </p>
         ))}
-
-      {/* Chatbot Button */}
-      <div className="faq-chatbot-button">
-        <FAQChatbot />
       </div>
-     </div>
-     </div>
+
+      {/* Main Content */}
+      <div className="faq-content">
+        {/* Menu Button: Only show when the sidebar is not visible */}
+        {!sidebarVisible && (
+          <button
+            className={`menu-button ${isScrolled ? "scrolled" : ""}`}
+            onClick={toggleSidebar}
+          >
+            ☰ Menu
+          </button>
+        )}
+
+        {faqs
+          .filter((faq) => faq.category === selectedCategory)
+          .map((faq, index) => (
+            <div key={index} className="faq-item">
+              <p className="faq-answer">{faq.answer}</p>
+            </div>
+          ))}
+
+        {/* Chatbot Button */}
+        <div className="faq-chatbot-button">
+          <FAQChatbot />
+        </div>
+      </div>
+    </div>
   );
 };
 
