@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import FAQChatbot from "./FAQChatbot";
 import Apply from "./Apply";
 import "../css/FAQ.css"; // Link to the CSS file
@@ -24,6 +24,8 @@ const FAQPage = () => {
   const [sidebarVisible, setSidebarVisible] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false); // Track scroll position
   const [selectedCategory, setSelectedCategory] = useState("General Information");
+
+
 
   // Detect screen size and set initial sidebar visibility
   useEffect(() => {

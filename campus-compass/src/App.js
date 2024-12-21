@@ -11,7 +11,7 @@ import Selection from './Selection';
 import TermsAndConditions from './TermsAndConditions/TermsAndConditions';
 import FloatingButtons from './components/FloatingButtons';
 import AnimatedCharacter from './Home/js/AnimatedCharacter';
-
+import ScrollToTopOnRouteChange from './components/ScrollToTopOnRouteChange';
 
 
 
@@ -20,6 +20,7 @@ const App = () => {
     <Router>
       <div className="app-container">
         <Header />
+        <ScrollToTopOnRouteChange />
         <main>
           <Routes>
             <Route path="/" element={<Home />} />
