@@ -12,6 +12,7 @@ import TermsAndConditions from './TermsAndConditions/TermsAndConditions';
 import FloatingButtons from './components/FloatingButtons';
 import AnimatedCharacter from './Home/js/AnimatedCharacter';
 import ScrollToTopOnRouteChange from './components/ScrollToTopOnRouteChange';
+import Universitypage from './UniversitiesAndDegrees/Universitypage';
 
 
 
@@ -24,7 +25,8 @@ const App = () => {
         <main>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/selection" element={<Selection />} />
+            {/* <Route path="/selection" element={<Selection />} /> */}
+            <Route path="/UniversitiesAndDegrees/Universitypage" element={<Universitypage />} />
             <Route path="/about" element={<About />} />
             <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
             <Route path="/Contact" element={<Contact />} />

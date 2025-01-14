@@ -60,8 +60,11 @@ function Header() {
             <li className={getActiveClass('/About')}>
               <Link to="/About">About</Link>
             </li>
-            <li className={getActiveClass('/Selection')}>
+            {/* <li className={getActiveClass('/Selection')}>
               <Link to="/Selection">Courses</Link>
+            </li> */}
+            <li className={getActiveClass('/Universitypage')}>
+              <Link to="/UniversitiesAndDegrees/Universitypage">Courses</Link>
             </li>
             <li className={getActiveClass('/FAQ')}>
               <Link to="/FAQ">FAQ</Link>
