@@ -39,6 +39,13 @@ const FAQChatbot = ({ chatOpen, closeChat }) => {
     setUserMessage('');
   };
 
+  // Handle Enter key press
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter') {
+      sendMessage();
+    }
+  };
+
   // Don't render the chatbot if it's closed
   if (!chatOpen) return null;
 
