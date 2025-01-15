@@ -7,6 +7,7 @@ function Footer() {
   const [isVisible, setIsVisible] = useState(false);
 
   // Show or hide the "Back to Top" button based on scroll position
+  /*
   useEffect(() => {
     const toggleVisibility = () => {
       if (window.scrollY > 300) {
@@ -28,7 +29,7 @@ function Footer() {
       top: 0,
       behavior: 'smooth',
     });
-  };
+  }; */
 
   return (
     <footer className="footer">
@@ -53,7 +54,6 @@ function Footer() {
         <div className="footer-column">
           <h4>Follow Us</h4>
           <div className="social-icons">
-        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"> <FontAwesomeIcon icon={faFacebook} size="2x" /> </a>
           <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"> <FontAwesomeIcon icon={faTwitter} size="2x" /> </a>
           <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"> <FontAwesomeIcon icon={faInstagram} size="2x" /> </a>
           <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"> <FontAwesomeIcon icon={faLinkedin} size="2x" /> </a>
@@ -64,15 +64,7 @@ function Footer() {
       <div className="footer-bottom">
         <p>© 2024 Campus Compass. All Rights Reserved.</p>
       </div>
-
-      
-      
-      {/* Back to Top Button */}
-      {isVisible && (
-        <button className="back-to-top" onClick={scrollToTop}>
-          ↑
-        </button>
-      )}
+           
     </footer>
   );
 }
