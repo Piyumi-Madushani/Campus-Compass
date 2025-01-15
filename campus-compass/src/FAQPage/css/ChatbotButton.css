@@ -33,8 +33,9 @@
     z-index: 1000;
     overflow: hidden;
     animation: slideUp 0.3s ease-out;
+  
   }
-
+  
   @keyframes slideUp {
     from {
       opacity: 0;
