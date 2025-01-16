@@ -12,19 +12,6 @@ import UoWLogo from '../assets/images/UniversityLogos/WayambaUniversityLogo.png'
 import UoELogo from '../assets/images/UniversityLogos/EasternUniversityLogo.png';
 //import UWULogo from '../assets/images/UniversityLogos/UvaWellassaUniversityLogo.jpg';
 
-import UoCLogo from '../assets/images/UniversityLogos/UniversityofColomboLogo.png';
-import UoPLogo from '../assets/images/UniversityLogos/UniversityOfPeradeniyaLogo.png';
-import UoMLogo from '../assets/images/UniversityLogos/UniversityOfMoratuwaLogo.png';
-import UoKLogo from '../assets/images/UniversityLogos/UniversityOfKelaniyaLogo.png';
-import UoRLogo from '../assets/images/UniversityLogos/UniversityOfRuhunaLogo.png';
-import UoJLogo from '../assets/images/UniversityLogos/UniversityOfJaffnaLogo.png';
-import UoSJLogo from '../assets/images/UniversityLogos/UniversityOfSriJayawardanapuraLogo.png';
-import UoSLogo from '../assets/images/UniversityLogos/UniversityOfSabaragamuwaLogo.png';
-import UoWLogo from '../assets/images/UniversityLogos/WayambaUniversityLogo.png';
-import UoELogo from '../assets/images/UniversityLogos/EasternUniversityLogo.png';
-//import UWULogo from '../assets/images/UniversityLogos/UvaWellassaUniversityLogo.jpg';
-
-
 function FeaturedCourses() {
   const sliderRef = useRef(null);
 

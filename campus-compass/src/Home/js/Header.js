@@ -2,8 +2,8 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import '../css/Header.css';
 import logo from '../assets/images/logo.png';
-import LoginSignup from '../Login_Signup';
-import LoginModal from '../../components/LoginModal';
+/*import LoginSignup from '../Login_Signup';
+import LoginModal from '../../components/LoginModal';*/
 
 function Header() {
   const [isNavVisible, setIsNavVisible] = useState(false);
