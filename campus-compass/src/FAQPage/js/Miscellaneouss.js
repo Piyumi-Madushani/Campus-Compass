@@ -14,7 +14,7 @@ function Miscellaneouss() {
               To verify if a university is UGC-approved, you can follow these steps:
             </p>
             <ul>
-              <li>Visit the official UGC website: <a href="https://www.ugc.ac.lk" target="_blank" rel="noopener noreferrer">UGC Official Website</a>.</li>
+              <li>Visit the official UGC website: <a href="https://www.ugc.ac.lk" target="_blank" rel="noopener noreferrer" style={{ color: '#4ac6ff' }}>UGC Official Website</a>.</li>
               <li>Check the list of recognized universities under the "Recognized Institutions" section.</li>
               <li>Contact the UGC directly through their website if you have any doubts regarding a specific university's approval status.</li>
             </ul>

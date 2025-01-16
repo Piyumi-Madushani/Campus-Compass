@@ -29,7 +29,7 @@ function Admissions_Applications() {
             <ul>
               <li>Sit for the GCE A/L Examination with required subjects.</li>
               <li>Check your Z-Score to meet cut-off marks for desired programs.</li>
-              <li>Apply through the UGC (University Grants Commission) website: <a href="https://www.ugc.ac.lk">UGC Official Website</a>.</li>
+              <li>Apply through the UGC (University Grants Commission) website: <a href="https://www.ugc.ac.lk" style={{ color: '#4ac6ff' }}>UGC Official Website</a>.</li>
               <li>Rank your preferred courses and wait for the selection process.</li>
             </ul>
             <h3>2. Applying to Private Universities</h3>
