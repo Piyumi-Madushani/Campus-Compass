@@ -64,11 +64,14 @@ const FAQChatbot = ({ chatOpen, closeChat }) => {
         <div className="chatbot-messages">
           {messages.map((msg, index) => (
             <div
-              key={index}
-              className={`message ${msg.sender === 'user' ? 'user' : 'bot'}`}
-            >
-              {msg.text}
+            key={index}
+            className={`chat-message ${msg.sender === 'user' ? 'user-card' : 'bot-card'}`}
+          >
+            <div className={`message-label ${msg.sender === 'user' ? 'user-label' : 'bot-label'}`}>
+              {msg.sender === 'user' ? 'You' : 'Bot'}
             </div>
+            <div className="message-text">{msg.text}</div>
+          </div>
           ))}
         </div>
 
