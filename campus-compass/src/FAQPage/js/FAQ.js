@@ -1,50 +1,3 @@
-<<<<<<< HEAD
-import React from 'react';
-import FAQChatbot from './FAQChatbot';
-import  '../css/FAQ.css'; // Link to the CSS file
-
-
-function FAQ() {
-  const faqs = [
-    {
-      question: "What is Campus Compass?",
-      answer: "Campus Compass is an online platform designed to help students select suitable university course modules."
-    },
-    {
-      question: "How can I access the platform?",
-      answer: "You can access Campus Compass online. Explore features like module recommendations by signing up."
-    },
-    {
-      question: "Can I get personalized course recommendations?",
-      answer: "Yes! Create an account to receive module suggestions based on your interests and qualifications."
-    },
-    {
-      question: "How do I contact support?",
-      answer: "Visit the Contact page for support or to provide feedback."
-    }
-  ];
-
-  return (
-    <div className="faq-container">
-      <h2 className="faq-title">Frequently Asked Questions</h2>
-      <div className="faq-list">
-        {faqs.map((faq, index) => (
-          <div className="faq-item" key={index}>
-            <h3 className="faq-question">{faq.question}</h3>
-            <p className="faq-answer">{faq.answer}</p>
-            
-          </div>
-        ))}
-      </div>
-      <div className="faq-chatbot-button">
-    <FAQChatbot />
-</div>
-    </div>
-  );
-}
-
-export default FAQ;
-=======
 import React, { useState, useEffect } from "react";
 import FAQChatbot from "./FAQChatbot";
 import Apply from "./Apply";
@@ -174,4 +127,3 @@ const FAQPage = () => {
 };
 
 export default FAQPage;
->>>>>>> origin/main

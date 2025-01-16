@@ -1,11 +1,5 @@
-<<<<<<< HEAD
-// src/components/ChatbotButton.js
-import React from 'react';
-import { FaComments } from 'react-icons/fa';
-=======
 import React from 'react';
 import { FaComments } from 'react-icons/fa'; // Import the FaComments icon
->>>>>>> origin/main
 import '../css/ChatbotButton.css';
 
 function ChatbotButton({ toggleChat }) {
@@ -21,7 +15,3 @@ function ChatbotButton({ toggleChat }) {
 }
 
 export default ChatbotButton;
-<<<<<<< HEAD
-
-=======
->>>>>>> origin/main
