@@ -1,21 +1,23 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import '../css/Header.css';
-import logo from '../assets/images/logo.png';
-import LoginSignup from '../Login_Signup';
-import LoginModal from '../../components/LoginModal';
+import React, { useState, useRef, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { setActiveLinks } from "./setActiveLinks";
+import "../css/Header.css";
+import logo from "../assets/images/logo.png";
 
 function Header() {
   const [isNavVisible, setIsNavVisible] = useState(false);
+  const [activeAuth, setActiveAuth] = useState(null);
+  const navRef = useRef(null);
   const location = useLocation();
-  const navRef = useRef(null); // Ref for the nav element
 
-  // Toggle navigation menu visibility
   const toggleNav = () => {
     setIsNavVisible(!isNavVisible);
   };
 
-  // Detect clicks outside of the navigation menu
+  const handleNavLinkClick = () => {
+    setIsNavVisible(false);
+  };
+
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (navRef.current && !navRef.current.contains(event.target)) {
@@ -23,71 +25,71 @@ function Header() {
       }
     };
 
-    document.addEventListener('mousedown', handleClickOutside);
-
+    document.addEventListener("mousedown", handleClickOutside);
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
 
-  const getActiveClass = (path) => {
-    return location.pathname === path ? 'active' : '';
+  useEffect(() => {
+    setActiveLinks(".header-link", ".footer-link");
+  }, [location]);
+
+  const handleAuthClick = (type) => {
+    setActiveAuth(type);
   };
 
   return (
     <header className="header">
       <div className="container">
-        {/* Logo Section */}
         <div className="logo">
           <img src={logo} alt="Campus Compass Logo" className="logo-image" />
           <span className="logo-text">Campus Compass</span>
         </div>
 
-        {/* Hamburger Menu */}
         <div className="hamburger-menu" onClick={toggleNav}>
-          &#9776; {/* Unicode for hamburger icon */}
+          &#9776;
         </div>
 
-        {/* Navigation Links */}
-        <nav
-          ref={navRef} // Attach ref to the nav element
-          className={`nav-links ${isNavVisible ? 'show-nav' : ''}`}
-        >
+        <nav ref={navRef} className={`nav-links ${isNavVisible ? "show-nav" : ""}`}>
           <ul>
-            <li className={getActiveClass('/')}>
-              <Link to="/">Home</Link>
+            <li>
+              <Link to="/" className="header-link" onClick={handleNavLinkClick}>Home</Link>
             </li>
-            <li className={getActiveClass('/About')}>
-              <Link to="/About">About</Link>
+            <li>
+              <Link to="/About" className="header-link" onClick={handleNavLinkClick}>About</Link>
             </li>
-            <li className={getActiveClass('/Selection')}>
-              <Link to="/Selection">Courses</Link>
+            <li>
+              <Link to="/UniversitiesAndDegrees/Universitypage" className="header-link" onClick={handleNavLinkClick}>Courses</Link>
             </li>
-            <li className={getActiveClass('/FAQ')}>
-              <Link to="/FAQ">FAQ</Link>
+            <li>
+              <Link to="/FAQ" className="header-link" onClick={handleNavLinkClick}>FAQ</Link>
             </li>
-            <li className={getActiveClass('/Contact')}>
-              <Link to="/Contact">Contact Us</Link>
-            </li>
-            <li className={getActiveClass('/terms-and-conditions')}>
-              <Link to="/terms-and-conditions">Terms and Conditions</Link>
+            <li>
+              <Link to="/Contact" className="header-link" onClick={handleNavLinkClick}>Contact Us</Link>
             </li>
           </ul>
         </nav>
 
-        {/* Authentication Buttons */}
-  <div className="auth-buttons">
-  {/* Link components for Login and Sign Up */}
-  <Link to="/LoginSignup" className="login-btn">
-    Login
-  </Link>
-  <Link to="/LoginSignup" className="signup-btn">
-    Sign Up
-  </Link>
-</div>
+        <div className="auth-buttons">
+          <Link
+            to="/login"
+            className={`login-btn ${activeAuth === "login" ? "active" : ""}`}
+            onClick={() => handleAuthClick("login")}
+          >
+            Login
+          </Link>
+          <Link
+            to="/signup"
+            className={`signup-btn ${activeAuth === "signup" ? "active" : ""}`}
+            onClick={() => handleAuthClick("signup")}
+          >
+            SignUp
+          </Link>
+        </div>
       </div>
     </header>
   );
 }
-  
+
 export default Header;

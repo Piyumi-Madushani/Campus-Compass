@@ -16,7 +16,9 @@ const ParentComponent = () => {
   return (
     <div>
       <ChatbotButton toggleChat={toggleChat} />
-      <chatOpen && FAQChatbot chatOpen={chatOpen} closeChat={closeChat} />
+
+      {chatOpen && <FAQChatbot chatOpen={chatOpen} closeChat={closeChat} />}
+
     </div>
   );
 };

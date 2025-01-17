@@ -1,6 +1,5 @@
 import React, { useRef } from 'react';
 import '../css/FeaturedCourses.css';
-
 import UoCLogo from '../assets/images/UniversityLogos/UniversityofColomboLogo.png';
 import UoPLogo from '../assets/images/UniversityLogos/UniversityOfPeradeniyaLogo.png';
 import UoMLogo from '../assets/images/UniversityLogos/UniversityOfMoratuwaLogo.png';
@@ -12,7 +11,6 @@ import UoSLogo from '../assets/images/UniversityLogos/UniversityOfSabaragamuwaLo
 import UoWLogo from '../assets/images/UniversityLogos/WayambaUniversityLogo.png';
 import UoELogo from '../assets/images/UniversityLogos/EasternUniversityLogo.png';
 //import UWULogo from '../assets/images/UniversityLogos/UvaWellassaUniversityLogo.jpg';
-
 
 function FeaturedCourses() {
   const sliderRef = useRef(null);
@@ -30,7 +28,6 @@ function FeaturedCourses() {
     {
       name: 'University of Colombo',
       course: 'Computer Science',
-
       logo: UoCLogo,
       link: 'https://www.cmb.ac.lk/',
     },
@@ -44,23 +41,18 @@ function FeaturedCourses() {
       name: 'University of Peradeniya',
       course: 'Medicine',
       logo: UoPLogo,
-
       link: 'https://www.pdn.ac.lk/',
     },
     {
       name: 'University of Moratuwa',
       course: 'Engineering',
-
       logo: UoMLogo,
-
       link: 'https://uom.lk/',
     },
     {
       name: 'University of Kelaniya',
       course: 'Management',
-
       logo: UoKLogo,
-
       link: 'https://www.kln.ac.lk/',
     },
     {
@@ -68,7 +60,6 @@ function FeaturedCourses() {
       course: 'Agriculture',
 
       logo: UoRLogo,
-
       link: 'https://www.ruh.ac.lk/',
     },
     {

@@ -4,8 +4,8 @@ import '../css/ChatbotButton.css';
 
 function ChatbotButton({ toggleChat }) {
   return (
-    <button 
-      className="chatbot-button" 
+    <button
+      className="chatbot-button"
       onClick={toggleChat}
       aria-label="Chat with us"
     >
