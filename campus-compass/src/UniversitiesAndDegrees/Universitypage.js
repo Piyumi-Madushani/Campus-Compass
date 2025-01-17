@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { FaSearch } from "react-icons/fa";
 import "./Universitypage.css";
 import UOCLogo from "../UniversitiesAndDegrees/UniversityLogos/UniversityofColomboLogo.png";
 import UOPLogo from "../UniversitiesAndDegrees/UniversityLogos/UniversityOfPeradeniyaLogo.png";
@@ -675,6 +676,11 @@ function Selection() {
   const [selectedStream, setSelectedStream] = useState("");
   const [selectedCourse, setSelectedCourse] = useState("");
   const [filteredData, setFilteredData] = useState(data.slice(1)); // Exclude metadata
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  const toggleSearchBar = () => {
+    setIsExpanded((prev) => !prev);
+  };
 
   const handleSearch = (event) => {
     const term = event.target.value.toLowerCase();
@@ -686,7 +692,7 @@ function Selection() {
     const keywords = search.split(/[^a-zA-Z0-9]+/).filter((keyword) => keyword.trim() !== "");
   
     const filtered = data.slice(1).filter((item) => {
-      const { all_Courses, all_Courses_Types } = data[0];
+      const { all_Courses } = data[0];
   
       const universityMatch = !university || item.university.toLowerCase().includes(university.toLowerCase());
       
@@ -761,17 +767,6 @@ function Selection() {
           <div className="universities-container">
 
             <div className="uni-page-filters-container">
-
-              <div className="uni-page-filter-box unipage-search-box-filter">
-                <label className="unipage-filter-lable searchlabel">Search</label>
-                <input
-                  type="text"
-                  placeholder="Search by university, A/L stream or course"
-                  value={searchTerm}
-                  onChange={handleSearch}
-                  className="search-input-box"
-                />
-              </div>
               
               <div className="uni-page-filter-box univrsity-dropdown-filter">
                 <label className="unipage-filter-lable dropdownlabel">Universities</label>
@@ -813,6 +808,20 @@ function Selection() {
                 </select>
               </div>
               
+              <div className="uni-page-filter-box unipage-search-box-filter">
+              <label className="unipage-filter-lable searchlabel" id="searchBox" onclick="expand"><FaSearch className="search-icon" /></label>
+                <div className={`search-container ${isExpanded ? "expanded" : ""}`} onClick={toggleSearchBar}>
+             
+                <input
+                  type="text"
+                  placeholder="Search here"
+                  value={searchTerm}
+                  onChange={handleSearch}
+                  className="search-input-box"
+                />
+              </div>
+
+            </div>
             </div>
 
             <div className="cards-container">

@@ -5,111 +5,140 @@
   box-sizing: border-box;
 }
 
-/* .html {
-  font-size: 62.5%;
-}
-
-.body {
-  margin: 10px;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
-
-.page-title {
-  font-size: 3rem;
-  text-align: center;
-  background-color: gold;
-  padding: 5px;
-  border: 1px solid gray;
-} */
-
-/* ================================================================================================ */
-
+/* Main Container */
 .unipage-main-container {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-size: 62.5%;
 }
 
-/* page title */
+/* Page Title */
 .page-title-container {
   margin: 10px;
-  /* border: 3px solid black; */
   border-radius: 10px;
   padding: 10px;
 }
 
 .unipage-title {
-  font-size: 3rem;
+  font-size: 1.5rem;
   text-align: center;
   margin: 10px;
+  color: #002b47;
+
 }
 
-/* Filter Section */
+/* Filter Container */
 .uni-page-filters-container {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  /* border: 3px solid black; */
-  border-radius: 10px;
-  padding: 10px;
-  margin: 10px;
-  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   align-items: center;
-  /* overflow-x: scroll; */
-}
-
-@media screen and (min-width: 1570px) {
-  .uni-page-filters-container {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-  }
-}
-
-.uni-page-filter-box {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  /* border: 3px solid blue; */
-  background-color: lightblue;
+  padding: 20px;
+  margin: 10px;
+  gap: 15px;
+  background-color: #f5f8fb; /* Subtle light background */
   border-radius: 10px;
-  padding: 10px;
-  margin: 5px;
-  /* overflow-x: scroll; */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
 }
 
-/* @media screen and (min-width: 1560px) {
-  .uni-page-filter-box {
-    grid-template-rows: auto 1fr;
-    grid-template-columns: auto 1fr;
-  }
-} */
+/* Individual Filter Box */
+.uni-page-filter-box {
+  flex: 1 1 calc(25% - 20px); /* Responsive sizing */
+  min-width: 250px;
+  background-color: #ffffff; /* Clean white background */
+  border: 1px solid #d9e3eb; /* Soft border */
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Slight shadow for depth */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
+/* Hover Effect */
+.uni-page-filter-box:hover {
+  transform: translateY(-5px); /* Slight lift on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Enhanced shadow */
+}
+
+/* Filter Labels */
 .unipage-filter-lable {
-  /* border: 3px solid black; */
-  background-color: skyblue;
-  border: 3px solid dodgerblue;
-  border-radius: 5px;
-  padding: 5px;
-  margin: 10px;
-  text-align: center;
-  font-size: 1.25rem;
+  display: block;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #004f66; /* Accent color */
+  margin-bottom: 10px;
+  text-align: left; /* Align labels to the left */
 }
 
-.dropdown-list-box {
-  border: 3px solid skyblue;
-  border-radius: 5px;
+/* Select Dropdown Styling */
+.uni-page-filter-box select {
+  width: 100%;
   padding: 10px;
-  margin: 10px;
+  border: 1px solid #d9e3eb; /* Match filter box border */
+  border-radius: 5px;
   font-size: 1rem;
+  color: #333; /* Dark text for readability */
+  background-color: #fff;
+  transition: border-color 0.3s ease;
 }
 
-.dropdown-list-box:hover {
-  border: 3px solid dodgerblue;
+.uni-page-filter-box select:focus {
+  border-color: #4ac6ff; /* Highlighted border on focus */
+  outline: none;
+  box-shadow: 0 0 3px rgba(74, 198, 255, 0.5); /* Subtle focus shadow */
 }
 
+/* Input Box Styling */
+.uni-page-filter-box input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #d9e3eb; /* Match filter box border */
+  border-radius: 5px;
+  font-size: 1rem;
+  color: #333; /* Dark text for readability */
+  background-color: #fff;
+  transition: border-color 0.3s ease;
+}
+
+.uni-page-filter-box input:focus {
+  border-color: #4ac6ff; /* Highlighted border on focus */
+  outline: none;
+  box-shadow: 0 0 3px rgba(74, 198, 255, 0.5); /* Subtle focus shadow */
+}
+
+/* Dropdown and Input Common Styling */
+.dropdown-list-box,
 .search-input-box {
-  margin: 10px;
-  padding: 10px;
-  border: 3px solid skyblue;
-  border-radius: 5px;
+  margin-top: 10px;
+  margin-bottom: 0;
+  padding: 12px;
   font-size: 1rem;
+  background-color: #f9fbfc; /* Slightly off-white */
+}
+
+/* Placeholder Styling */
+.dropdown-list-box::placeholder,
+.search-input-box::placeholder {
+  color: #aaa;
+  font-style: italic;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .uni-page-filter-box {
+    flex: 1 1 100%; /* Stack filters vertically */
+    margin-bottom: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .unipage-filter-lable {
+    font-size: 1rem;
+  }
+
+  .dropdown-list-box,
+  .search-input-box {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
 }
 
 
@@ -118,12 +147,10 @@
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   gap: 20px;
-  /* border: 3px solid black; */
   border-radius: 10px;
   box-sizing: border-box;
   padding: 30px;
   margin: 10px;
-
 }
 
 @media screen and (min-width: 1024px) {
@@ -135,12 +162,12 @@
 
 .card-container {
   display: grid;
-  grid-template-rows: auto; /* Adjust based on content */
+  grid-template-rows: auto;
   grid-template-columns: 1fr;
   gap: 5px;
   border: 3px solid #002b47;
   border-radius: 20px;
-  padding: 10px; /* Consistent spacing */
+  padding: 10px;
 }
 
 @media screen and (min-width: 1024px) {
@@ -148,7 +175,6 @@
     grid-template-rows: auto 1fr;
     grid-template-columns: auto 1fr;
   }
-
   .card-bodybox, .card-footbox {
     grid-column: span 2;
   }
@@ -160,17 +186,14 @@
   height: auto;
   border-radius: 10px;
   text-align: center;
-  align-content: center;
   padding: 10px;
 }
 
 /* Card Details */
 .uni-card-logo {
   width: 100px;
-  height: auto;
   object-fit: cover;
   margin: 5px;
-  padding: 5px;
 }
 
 .univesity-name {
@@ -183,7 +206,6 @@
   }
 }
 
-
 .university-courses-list-title {
   font-size: 1rem;
   margin-top: 20px;
@@ -191,17 +213,10 @@
   text-align: start;
 }
 
-.university-courses-list {
+.university-courses-list,
+.university-url-list {
   font-size: 1rem;
   text-align: start;
   padding-left: 50px;
-}
-
-.university-url-list {
-  font-size: 1rem;
-}
-
-.university-courses-list, .university-url-list {
   list-style: none;
 }
-

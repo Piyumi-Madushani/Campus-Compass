@@ -60,9 +60,20 @@ const FAQChatbot = ({ chatOpen, closeChat }) => {
               </div>
             ))}
         </div>
+
+        {/* Input field and Send button */}
+        <div className="chatbot-input">
+          <input
+            type="text"
+            value={userMessage}
+            onChange={(e) => setUserMessage(e.target.value)}
+            placeholder="Ask a question..."
+          />
+          <button onClick={sendMessage}>Send</button>
         </div>
-        </div>
-  )
+      </div>
+    </div>
+  );
 };
 
 export default FAQChatbot;
