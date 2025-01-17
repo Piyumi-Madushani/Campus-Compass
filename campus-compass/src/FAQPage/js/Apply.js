@@ -14,7 +14,7 @@ function Apply() {
               <li>Sit for the GCE A/L Examination with required subjects.</li>
               <li>Check your Z-Score to meet cut-off marks for desired programs.</li>
               <li>
-                Apply via the UGC: Visit <a href="https://www.ugc.ac.lk">UGC Official Website</a>.
+                Apply via the UGC: Visit <a href="https://www.ugc.ac.lk" style={{ color: '#4ac6ff' }}>UGC Official Website</a>.
               </li>
               <li>Rank your preferred courses and wait for selection.</li>
             </ul>

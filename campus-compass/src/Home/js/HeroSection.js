@@ -3,7 +3,6 @@ import '../css/HeroSection.css';
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
 
-
 function HeroSection() {
   return (
     <section className="hero-section">

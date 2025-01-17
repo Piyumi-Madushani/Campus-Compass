@@ -75,6 +75,7 @@ const FAQChatbot = ({ chatOpen, closeChat }) => {
           ))}
         </div>
 
+
         {/* Input field and send button */}
         <div className="chatbot-input">
           <input
@@ -85,10 +86,10 @@ const FAQChatbot = ({ chatOpen, closeChat }) => {
             placeholder="Ask a question..."
           />
           <button onClick={sendMessage}>Send</button>
+
         </div>
-      </div>
-    </div>
-  );
+        </div>
+  )
 };
 
 export default FAQChatbot;

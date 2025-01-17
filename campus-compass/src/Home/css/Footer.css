@@ -1,3 +1,4 @@
+/* Footer Styles */
 .footer {
   background-color: #002b47; /* Dark navy blue */
   color: #e0f4ff; /* Light blue for text */
@@ -18,35 +19,36 @@
   margin: 1rem;
 }
 
-.footer-column h4 {
+.footer-title {
   font-size: 1.2rem;
   margin-bottom: 1rem;
   color: #4ac6ff; /* Light blue */
 }
 
-.footer-column p,
-.footer-column ul {
-  font-size: 1rem;
-  line-height: 1.5;
-}
-
-.footer-column ul {
+.footer-links {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
-.footer-column ul li {
+.footer-item {
   margin: 0.5rem 0;
 }
 
-.footer-column ul li a {
+.footer-link {
   color: #e0f4ff;
   text-decoration: none;
+  font-size: 1rem;
+  line-height: 1.5;
   transition: color 0.3s;
 }
 
-.footer-column ul li a:hover {
-  color: #4ac6ff;
+.footer-link:hover {
+  color: #4ac6ff; /* Light blue on hover */
+}
+
+.footer-item.active .footer-link {
+  color: #4ac6ff; /* Active link color */
 }
 
 .social-icons {
@@ -79,9 +81,7 @@
   position: fixed;
   bottom: 2rem;
   right: 2rem;
-  background-color: lightblue;
-
-
+  background-color: #4ac6ff; 
   color: #002b47;
   border: none;
   border-radius: 50%;
