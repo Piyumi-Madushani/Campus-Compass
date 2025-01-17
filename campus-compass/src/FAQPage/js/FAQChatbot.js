@@ -75,9 +75,6 @@ const FAQChatbot = ({ chatOpen, closeChat }) => {
           ))}
         </div>
 
-<<<<<<< HEAD
-        {/* Input field and Send button */}
-=======
 
         {/* Input field and send button */}
 >>>>>>> 029f7610a4229b8f38531dea64c6f60a53376b2e
@@ -96,11 +93,9 @@ const FAQChatbot = ({ chatOpen, closeChat }) => {
           />
           <button onClick={sendMessage}>Send</button>
 
->>>>>>> 029f7610a4229b8f38531dea64c6f60a53376b2e
         </div>
-      </div>
-    </div>
-  );
+        </div>
+  )
 };
 
 export default FAQChatbot;
