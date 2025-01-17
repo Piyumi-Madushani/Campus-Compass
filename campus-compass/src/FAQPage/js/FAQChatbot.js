@@ -95,7 +95,8 @@ const FAQChatbot = ({ chatOpen, closeChat }) => {
 
         </div>
         </div>
-  )
+      </div>
+  );
 };
 
 export default FAQChatbot;
