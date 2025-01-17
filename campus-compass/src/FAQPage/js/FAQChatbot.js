@@ -77,11 +77,17 @@ const FAQChatbot = ({ chatOpen, closeChat }) => {
 
 
         {/* Input field and send button */}
+>>>>>>> 029f7610a4229b8f38531dea64c6f60a53376b2e
         <div className="chatbot-input">
           <input
             type="text"
             value={userMessage}
             onChange={(e) => setUserMessage(e.target.value)}
+<<<<<<< HEAD
+            placeholder="Ask a question..."
+          />
+          <button onClick={sendMessage}>Send</button>
+=======
             onKeyDown={handleKeyDown} // Handle Enter key
             placeholder="Ask a question..."
           />
