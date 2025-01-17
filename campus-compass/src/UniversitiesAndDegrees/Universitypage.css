@@ -5,60 +5,158 @@
   box-sizing: border-box;
 }
 
-/* .html {
-  font-size: 62.5%;
-}
-
-.body {
-  margin: 10px;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
-
-.page-title {
-  font-size: 3rem;
-  text-align: center;
-  background-color: gold;
-  padding: 5px;
-  border: 1px solid gray;
-} */
-
-/* ================================================================================================ */
-
+/* Main container */
 .unipage-main-container {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-size: 62.5%;
 }
 
-/* page title */
-.page-title-container {
-  margin: 10px;
-  /* border: 3px solid black; */
+/* Card Layout */
+.cards-container {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr;
+  gap: 5px;
+  border-radius: 20px;
+  padding: 10px;
+  align-items: start;
+  background-color: rgb(201, 228, 240); /* Set card background to white */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Default shadow */
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.card-container:hover {
+  box-shadow: 0 8px 16px rgba(74, 179, 235, 0.722); /* Shadow effect around the card when hovered */
+  transform: scale(1.05); /* Slightly scale up the card */
+}
+
+/* Card content */
+.card-content {
+  background-color: rgb(145, 213, 255); /* Light background for card content */
+  box-shadow: 2px 12px 16px rgba(10, 10, 10, 0.2); /* Darker shadow effect */
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .cards-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 cards for medium screen sizes */
+    gap: 20px;
+    align-items: start;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .cards-container {
+    grid-template-columns: repeat(3, 1fr); /* 3 cards for large screen sizes */
+    gap: 30px; /* Adjust the gap between cards */
+    align-items: start;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 500px;
+    margin-bottom: 20px; /* Uniform spacing between card rows */
+  
+  }
+}
+
+/* Card container */
+.card-container {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr;
+  gap: 5px;
+  border-radius: 20px;
+  padding: 10px;
+  align-items: start;
+  background-color: rgb(252, 254, 254); /* Set card background to white */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added shadow effect */
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.card-content {
+  background-color: rgb(145, 213, 255); /* Light grey background on hover */
+  box-shadow: 2 12px 16px rgba(10, 10, 10, 0.2); /* Darker shadow effect on hover */
+}
+
+/* Card box */
+.card-box {
+  background-color: rgb(255, 255, 255);
+  width: 100%;
+  height: auto;
   border-radius: 10px;
+  text-align: center;
   padding: 10px;
 }
 
-.unipage-title {
-  font-size: 3rem;
+/* Card details */
+.uni-card-logo {
+  width: 100px;
+  height: auto;
+  object-fit: cover;
+  margin: 5px;
+  padding: 5px;
+}
+
+.univesity-name {
+  font-size: 1.25rem;
+}
+
+@media screen and (min-width: 1024px) {
+  .univesity-name {
+    font-size: 1.5rem;
+  }
+}
+
+.card-content {
+  flex-grow: 1;
+}
+
+.university-courses-list-title {
+  font-size: 1rem;
+  margin-top: 20px;
+  padding-left: 20px;
+  text-align: start;
+}
+
+.university-courses-list {
+  font-size: 1rem;
+  text-align: start;
+  padding-left: 50px;
+  flex-grow: 1;
+}
+
+.university-url-list {
+  font-size: 1rem;
   text-align: center;
-  margin: 10px;
+  margin-top: auto;
+  padding-top: 10px;
+}
+
+.university-courses-list,
+.university-url-list {
+  list-style: none;
 }
 
 /* Filter Section */
 .uni-page-filters-container {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  /* border: 3px solid black; */
   border-radius: 10px;
   padding: 10px;
   margin: 10px;
   justify-content: center;
   align-items: center;
-  /* overflow-x: scroll; */
+}
+
+.card-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive grid */
+  gap: 20px; /* Uniform gap between cards */
+
 }
 
 @media screen and (min-width: 1570px) {
   .uni-page-filters-container {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 10px;
   }
 }
@@ -66,23 +164,13 @@
 .uni-page-filter-box {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  /* border: 3px solid blue; */
   background-color: lightblue;
   border-radius: 10px;
   padding: 10px;
   margin: 5px;
-  /* overflow-x: scroll; */
 }
 
-/* @media screen and (min-width: 1560px) {
-  .uni-page-filter-box {
-    grid-template-rows: auto 1fr;
-    grid-template-columns: auto 1fr;
-  }
-} */
-
 .unipage-filter-lable {
-  /* border: 3px solid black; */
   background-color: skyblue;
   border: 3px solid dodgerblue;
   border-radius: 5px;
@@ -111,97 +199,3 @@
   border-radius: 5px;
   font-size: 1rem;
 }
-
-
-/* Card Layout */
-.cards-container {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  gap: 20px;
-  /* border: 3px solid black; */
-  border-radius: 10px;
-  box-sizing: border-box;
-  padding: 30px;
-  margin: 10px;
-
-}
-
-@media screen and (min-width: 1024px) {
-  .cards-container {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
-  }
-}
-
-.card-container {
-  display: grid;
-  grid-template-rows: auto; /* Adjust based on content */
-  grid-template-columns: 1fr;
-  gap: 5px;
-  border: 3px solid #002b47;
-  border-radius: 20px;
-  padding: 10px; /* Consistent spacing */
-}
-
-@media screen and (min-width: 1024px) {
-  .card-container {
-    grid-template-rows: auto 1fr;
-    grid-template-columns: auto 1fr;
-  }
-
-  .card-bodybox, .card-footbox {
-    grid-column: span 2;
-  }
-}
-
-.card-box {
-  background-color: skyblue;
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-  text-align: center;
-  align-content: center;
-  padding: 10px;
-}
-
-/* Card Details */
-.uni-card-logo {
-  width: 100px;
-  height: auto;
-  object-fit: cover;
-  margin: 5px;
-  padding: 5px;
-}
-
-.univesity-name {
-  font-size: 1.25rem;
-}
-
-@media screen and (min-width: 1024px) {
-  .univesity-name {
-    font-size: 1.5rem;
-  }
-}
-
-
-.university-courses-list-title {
-  font-size: 1rem;
-  margin-top: 20px;
-  padding-left: 20px;
-  text-align: start;
-}
-
-.university-courses-list {
-  font-size: 1rem;
-  text-align: start;
-  padding-left: 50px;
-}
-
-.university-url-list {
-  font-size: 1rem;
-}
-
-.university-courses-list, .university-url-list {
-  list-style: none;
-}
-
