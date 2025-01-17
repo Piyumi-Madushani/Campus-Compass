@@ -24,8 +24,10 @@
     position: fixed;
     bottom: 80px; /* Adjust based on other buttons */
     right: 30px;
-    width: 300px;
-    max-width: 90%;
+    width: 300px; /* Default width */
+    max-width: 50%;
+    height: 400px; /* Default height */
+    max-height: 70%; /* Avoid overflow on small screens */
     background-color: #ffffff;
     border: 1px solid #dceefc;
     border-radius: 8px;
@@ -33,8 +35,47 @@
     z-index: 1000;
     overflow: hidden;
     animation: slideUp 0.3s ease-out;
-  
+    overflow: visible;
   }
+  /* Chatbot Header */
+.chatbot-header {
+  background-color: #004f73; /* Dark blue */
+  color: #ffffff; /* White */
+  padding: 1rem;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  position: relative; /* For positioning child elements (close button) */
+  border-bottom: 1px solid #dceefc; /* Subtle separation */
+  display: flex; /* For aligning items */
+  justify-content: center; /* Center the header text */
+  align-items: center;
+  height: 50px; /* Define fixed height for the header */
+  overflow: visible;
+}
+
+/* Close Button */
+.chatbot-close {
+  position: absolute;
+  top: 5%;
+  right: 20px; /* Distance from the right */
+  transform: translateY(-50%); /* Vertically center the button */
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #ffffff; /* White for contrast */
+  transition: color 0.3s ease, transform 0.2s ease;
+  z-index: 1001;
+  content: '×';
+  visibility: visible;
+  opacity: 1;
+}
+
+.chatbot-close:hover {
+  color: #ff6b6b; /* Red for hover effect */
+  transform: scale(1.1); /* Slightly enlarge on hover */
+}
   
   @keyframes slideUp {
     from {
@@ -47,28 +88,68 @@
     }
 
   }
-  .chatbot-messages {
-    height: 400px;
-    overflow-y: auto;
-    padding: 1rem;
-    background-color: #f5faff; /* Light blue background */
-  }
-  
-  .chatbot-message {
-    margin-bottom: 1rem;
-    padding: 0.5rem;
-    border-radius: 8px;
-    max-width: 80%;
-  }
+
+/* Individual Chat Message */
+.chatbot-message {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  max-width: 80%;
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  font-size: 15px;
+  line-height: 1.4;
+  position: relative;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.3s ease-in-out;
+}
+.chatbot-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem;
+  background-color: rgba(132, 189, 238, 0.7); /* Semi-transparent background */
+  border-top: 1px solid rgba(220, 238, 252, 0.8); /* Semi-transparent border */
+  backdrop-filter: blur(10px); /* Applies a blur effect to the background */
+  scroll-behavior: smooth;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
   
   .chatbot-message.user {
-    background-color: #dceefc; /* User message */
-    align-self: flex-end;
+  background-color: #cce5ff; /* Light blue */
+  color: #003366; /* Dark text */
+  align-self: flex-end;
+  text-align: right;
+  border-top-right-radius: 0;
+  flex-direction: row-reverse;
+  margin-left: auto;
   }
   
   .chatbot-message.bot {
-    background-color: #eaf7ff; /* Bot response */
+    background-color: #e2f7d4; /* Light green */
+    color: #2d572c; /* Dark text */
     align-self: flex-start;
+    text-align: left;
+    border-top-left-radius: 0;
+    margin-right: auto;
+  }
+  
+  .chatbot-message .timestamp {
+    font-size: 12px;
+    color: #999;
+    position: absolute;
+    bottom: -16px;
+    right: 10px;
+  }
+  
+  /* Separate Sections for User and Bot Labels */
+  .chatbot-message-label {
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #666;
   }
   
   .chatbot-input {
@@ -126,3 +207,26 @@
     opacity: 1;
   }
   
+  /* Responsive adjustments */
+@media (max-width: 768px) {
+  .chatbot-window {
+    width: 260px; /* Smaller width for tablets */
+    height: 360px; /* Smaller height for tablets */
+  }
+}
+
+@media (max-width: 480px) {
+  .chatbot-window {
+    width: 90%; /* Use a percentage for very small devices */
+    height: 70%; /* Adjust height for small screens */
+    bottom: 20px; /* Reduce bottom spacing */
+    right: 5%; /* Center horizontally */
+  }
+}
+
+@media (min-width: 1024px) {
+  .chatbot-window {
+    width: 350px; /* Larger size for bigger screens */
+    height: 450px;
+  }
+}

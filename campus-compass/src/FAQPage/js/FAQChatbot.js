@@ -1,75 +1,102 @@
 import React, { useState } from 'react';
-import '../css/FAQChatbot.css'; // Your CSS for styling the chatbot
+import '../css/FAQChatbot.css'; // Import your CSS for styling
 import axios from 'axios';
 
 const FAQChatbot = ({ chatOpen, closeChat }) => {
-  const [messages, setMessages] = useState([]); // Ensure initialization as an array
-  const [userMessage, setUserMessage] = useState(''); // User input message
+  const [messages, setMessages] = useState([]); // Messages state as an array
+  const [userMessage, setUserMessage] = useState(''); // User's input message
 
-  // Function to send message to the backend and receive a response
+  // Function to handle sending a message
   const sendMessage = async () => {
-    if (!userMessage.trim()) return; // Prevent sending empty messages
+    const trimmedMessage = userMessage.trim(); // Trim unnecessary whitespace
+    if (!trimmedMessage) return; // Prevent sending empty messages
 
-    // Add user message to the chat
-    const newMessages = Array.isArray(messages)
-      ? [...messages, { sender: 'user', text: userMessage }]
-      : [{ sender: 'user', text: userMessage }];
-    setMessages(newMessages);
+    // Update messages with the user's input
+    const updatedMessages = [
+      ...messages,
+      { sender: 'user', text: trimmedMessage },
+    ];
+    setMessages(updatedMessages);
 
     try {
-      // Make the API call to the backend Django API
+      // API call to your Django backend
       const response = await axios.post('http://127.0.0.1:8000/api/chat/', {
-        message: userMessage,
+        message: trimmedMessage,
       });
 
-      // Add bot response to the chat
-      setMessages([
-        ...newMessages,
+      // Add bot's response to the chat
+      setMessages((prevMessages) => [
+        ...prevMessages,
         { sender: 'bot', text: response.data.response },
       ]);
     } catch (error) {
-      // Handle error (e.g., if API call fails)
-      setMessages([
-        ...newMessages,
-        { sender: 'bot', text: 'Something went wrong. Please try again.' },
+      // Handle API errors gracefully
+      setMessages((prevMessages) => [
+        ...prevMessages,
+        { sender: 'bot', text: 'Something went wrong. Please try again later.' },
       ]);
+      console.error('Error sending message:', error); // Log error details
     }
 
-    // Clear the input field after sending the message
+    // Clear the input field after sending
     setUserMessage('');
   };
 
-  // Don't render the chatbot if it's closed
+  // Handle keypress events (e.g., Enter key to send message)
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter') {
+      sendMessage();
+    }
+  };
+
+  // Render nothing if the chat is closed
   if (!chatOpen) return null;
 
   return (
     <div className="chatbot">
       <div className="chatbot-window">
         {/* Close button */}
-        <button className="chatbot-close" onClick={closeChat}>✖</button>
+        <button className="chatbot-close" onClick={closeChat}>
+          ✖
+        </button>
 
-        {/* Messages display */}
+        {/* Messages display area */}
         <div className="chatbot-messages">
-          {Array.isArray(messages) &&
-            messages.map((msg, index) => (
-              <div
-                key={index}
-                className={`message ${msg.sender === 'user' ? 'user' : 'bot'}`}
-              >
-                {msg.text}
-              </div>
-            ))}
+          {messages.map((msg, index) => (
+            <div
+            key={index}
+            className={`chat-message ${msg.sender === 'user' ? 'user-card' : 'bot-card'}`}
+          >
+            <div className={`message-label ${msg.sender === 'user' ? 'user-label' : 'bot-label'}`}>
+              {msg.sender === 'user' ? 'You' : 'Bot'}
+            </div>
+            <div className="message-text">{msg.text}</div>
+          </div>
+          ))}
         </div>
 
+<<<<<<< HEAD
         {/* Input field and Send button */}
+=======
+
+        {/* Input field and send button */}
+>>>>>>> 029f7610a4229b8f38531dea64c6f60a53376b2e
         <div className="chatbot-input">
           <input
             type="text"
             value={userMessage}
             onChange={(e) => setUserMessage(e.target.value)}
+<<<<<<< HEAD
             placeholder="Ask a question..."
           />
           <button onClick={sendMessage}>Send</button>
+=======
+            onKeyDown={handleKeyDown} // Handle Enter key
+            placeholder="Ask a question..."
+          />
+          <button onClick={sendMessage}>Send</button>
+
+>>>>>>> 029f7610a4229b8f38531dea64c6f60a53376b2e
         </div>
       </div>
     </div>
