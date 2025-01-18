@@ -3,10 +3,13 @@ import { Link, useLocation } from "react-router-dom";
 import { setActiveLinks } from "./setActiveLinks";
 import "../css/Header.css";
 import logo from "../assets/images/logo.png";
+import LoginModal from "../../components/LoginModal";
+import SignupModal from "../../components/SignupModal";
 
 function Header() {
   const [isNavVisible, setIsNavVisible] = useState(false);
-  const [activeAuth, setActiveAuth] = useState(null);
+  const [showLogin, setShowLogin] = useState(false);
+  const [showSignup, setShowSignup] = useState(false);
   const navRef = useRef(null);
   const location = useLocation();
 
@@ -35,8 +38,20 @@ function Header() {
     setActiveLinks(".header-link", ".footer-link");
   }, [location]);
 
-  const handleAuthClick = (type) => {
-    setActiveAuth(type);
+  // Functions to open/close modals
+  const openLogin = () => {
+    setShowLogin(true);
+    setShowSignup(false);
+  };
+
+  const openSignup = () => {
+    setShowSignup(true);
+    setShowLogin(false);
+  };
+
+  const closeModal = () => {
+    setShowLogin(false);
+    setShowSignup(false);
   };
 
   return (
@@ -53,40 +68,23 @@ function Header() {
 
         <nav ref={navRef} className={`nav-links ${isNavVisible ? "show-nav" : ""}`}>
           <ul>
-            <li>
-              <Link to="/" className="header-link" onClick={handleNavLinkClick}>Home</Link>
-            </li>
-            <li>
-              <Link to="/About" className="header-link" onClick={handleNavLinkClick}>About</Link>
-            </li>
-            <li>
-              <Link to="/UniversitiesAndDegrees/Universitypage" className="header-link" onClick={handleNavLinkClick}>Courses</Link>
-            </li>
-            <li>
-              <Link to="/FAQ" className="header-link" onClick={handleNavLinkClick}>FAQ</Link>
-            </li>
-            <li>
-              <Link to="/Contact" className="header-link" onClick={handleNavLinkClick}>Contact Us</Link>
-            </li>
+            <li><Link to="/" className="header-link" onClick={handleNavLinkClick}>Home</Link></li>
+            <li><Link to="/About" className="header-link" onClick={handleNavLinkClick}>About</Link></li>
+            <li><Link to="/UniversitiesAndDegrees/Universitypage" className="header-link" onClick={handleNavLinkClick}>Courses</Link></li>
+            <li><Link to="/FAQ" className="header-link" onClick={handleNavLinkClick}>FAQ</Link></li>
+            <li><Link to="/Contact" className="header-link" onClick={handleNavLinkClick}>Contact Us</Link></li>
           </ul>
         </nav>
 
+        {/* Login & Signup Buttons */}
         <div className="auth-buttons">
-          <Link
-            to="/login"
-            className={`login-btn ${activeAuth === "login" ? "active" : ""}`}
-            onClick={() => handleAuthClick("login")}
-          >
-            Login
-          </Link>
-          <Link
-            to="/signup"
-            className={`signup-btn ${activeAuth === "signup" ? "active" : ""}`}
-            onClick={() => handleAuthClick("signup")}
-          >
-            SignUp
-          </Link>
+          <button className="login-btn" onClick={openLogin}>Login</button>
+          <button className="signup-btn" onClick={openSignup}>Sign Up</button>
         </div>
+
+        {/* Modals */}
+        {showLogin && <LoginModal onClose={closeModal} onSwitchToSignup={openSignup} />}
+        {showSignup && <SignupModal onClose={closeModal} onSwitchToLogin={openLogin} />}
       </div>
     </header>
   );
