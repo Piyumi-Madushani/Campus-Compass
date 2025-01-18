@@ -132,7 +132,7 @@
 
 .auth-buttons .login-btn.active,
 .auth-buttons .signup-btn.active {
-  border-color: #ffffff; /* White border for active button */
+  border-color: #ffffff !important; /* White border for active button */
   background-color: #004f66; /* Darker shade for active state */
   color: #ffffff; /* Bright text for better contrast */
 }
