@@ -1,13 +1,19 @@
 from pymongo import MongoClient
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-from datetime import datetime  # Import the datetime module
+from datetime import datetime
+from dotenv import load_dotenv  # Import the dotenv library
+import os  # Import the os module
+
+# Load environment variables from .env file
+load_dotenv()
 
 app = Flask(__name__)
-CORS(app, resources={r"/*": {"origins": "http://localhost:3000"}})  # Enable CORS for all routes from localhost:3000
+CORS(app, resources={r"/*": {"origins": "http://localhost:3000"}})
 
 # MongoDB Connection
-client = MongoClient("mongodb+srv://user:user@campuscompass.hashm.mongodb.net/")  # MongoDB URI
+mongo_uri = os.getenv("MONGO_URI")  # Fetch the MongoDB URI from the .env file
+client = MongoClient(mongo_uri)
 db = client["campus_compass_db"]  # Database name
 collection = db["contact_messages"]  # Collection name
 
